@@ -38,13 +38,11 @@ def create():
     cws.set_sheet_headers(wb)
     swb.style_titles(wb)
 
-    # Set field headers
-    swb.set_expense_field_headers(wb)
-    swb.set_income_field_headers(wb)
-    swb.set_balance_field_headers(wb)
+    # Add and style titles for each field in each worksheet
+    cws.set_field_headers(wb)
+    swb.align_field_headers(wb)
 
     swb.set_balance_fv_placeholders(wb['Balance'])
-
     swb.add_field_header_borders(wb)
 
     wb.save('./wb_budget.xlsx')

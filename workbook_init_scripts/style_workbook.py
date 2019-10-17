@@ -15,20 +15,13 @@ def style_titles(wb):
     Creates a NamedStyle object and applies the style
     to each sheet header.
 
-    Adds border to each sheet header
+    Each sheet header is given it's own fill pattern
 
-    Each sheet header is then given it's own fill pattern.
+    Adds border to each sheet header
 
     :param wb: Workbook containing the sheet
     :return:
     """
-
-    bd = Border(
-        left=pss.side_medium,
-        right=pss.side_medium,
-        top=pss.side_thick,
-        bottom=pss.side_thick
-    )
 
     title_fonts = NamedStyle(name='title_font')
     title_fonts.font = Font(size=20, bold=True, underline='single')
@@ -41,99 +34,29 @@ def style_titles(wb):
               ('6666CC', 'solid'),  # Balance
               ('AA00FF', 'solid'))  # Controls
 
-        # assigns first cell in merged cell to apply a style
+        # assigns first cell in merged cell to c to apply a style
         c = sheet.cell(row=1, column=1)
         c.style = title_fonts
         c.fill = PatternFill(fgColor=hp[index][0], fill_type=hp[index][1])
 
+        # bd object for use with setting border style
+        bd = Border(
+            left=pss.side_medium,
+            right=pss.side_medium,
+            top=pss.side_thick,
+            bottom=pss.side_thick
+        )
+
         # Applies border to each header, using bd object
         if sheet is not wb['Controls']:
-            max_col = sheet[4][-1].column_letter  # avoids calling on merged title
-            title_range = f'A1:{max_col}3'
+            max_col = sheet[4][-1].column_letter  # uses fields instead of title as...
+            title_range = f'A1:{max_col}3'        # ...merged cells don't have this attribute
         else:
             title_range = f'A1:F3'
         set_borders.border_range(sheet, cell_range=title_range, border=bd)
 
 
-def center_sheet_header(wb):
-    """
-    Merge and center cells to provide sheet header.
-
-    :param wb:
-    :return:
-    """
-    title_range = 'A1:C3'
-    align = Alignment(horizontal='center', vertical='center')
-
-    for sheet in wb:
-        set_alignments.align_range(sheet, cell_range=title_range, alignment=align)
-
-
 # --------------------- Field Headers ---------------------
-def set_expense_field_headers(wb):
-    """
-    Date
-    Purchase
-    Expenditure
-
-    :param wb:
-    :return:
-    """
-    ws = wb.worksheets[0]
-
-    # Date field - date
-    c = ws.cell(row=4, column=1, value='Date')
-    ws.column_dimensions[c.column_letter].width = 15
-
-    # Purchase field - string
-    c = ws.cell(row=4, column=2, value='Purchase')
-    ws.column_dimensions[c.column_letter].width = 25
-
-    # Expenditure field - float
-    c = ws.cell(row=4, column=3, value='Expenditure')
-    ws.column_dimensions[c.column_letter].width = 15
-
-
-def set_income_field_headers(wb):
-    ws = wb.worksheets[1]
-
-    # Date field - date
-    c = ws.cell(row=4, column=1, value='Date')
-    ws.column_dimensions[c.column_letter].width = 15
-
-    # Source field - string
-    c = ws.cell(row=4, column=2, value='Source')
-    ws.column_dimensions[c.column_letter].width = 25
-
-    # Income field - float
-    c = ws.cell(row=4, column=3, value='Income')
-    ws.column_dimensions[c.column_letter].width = 15
-
-
-def set_balance_field_headers(wb):
-    ws = wb.worksheets[2]
-
-    # Field ranges
-    f_ranges = {'Expenses': 'A4:B4',
-                'Income': 'C4:D4',
-                'Balance': 'B8:C8'}
-
-    align = Alignment(vertical='center', horizontal='center')
-
-    for column in ('A', 'B', 'C', 'D'):
-        ws.column_dimensions[column].width = 15
-
-    for index, (key, value) in enumerate(f_ranges.items()):
-        # set field labels
-        ws[value.split(':')[0]].value = key
-
-        # Merge field header cells
-        ws.merge_cells(value)
-
-        # Center align field labels
-        set_alignments.align_range(ws, cell_range=value, alignment=align)
-
-
 def add_field_header_borders(wb):
     """
         Apply medium borders to the field headers on each sheet within the
@@ -153,30 +76,59 @@ def add_field_header_borders(wb):
         top=side
     )
     bd_divider = Border(right=side_thin)
-    align = Alignment(horizontal='center', vertical='center')
 
     for sheet in wb:
         if sheet in [wb['Balance'], wb['Controls']]:
+            # Balance is special, different layout than first 2 sheets
+            # Controls has no fields
             if sheet is wb['Balance']:
-                # Expenses and Income
+                # Expenses and Income, bd wraps both
                 field_range = 'A4:D4'
                 set_borders.border_range(sheet, cell_range=field_range, border=bd)
 
                 # Balance
                 field_range = 'B8:C8'
                 set_borders.border_range(sheet, cell_range=field_range, border=bd)
+
+                # Set dividing border between field headers
+                set_borders.border_cell(sheet[4][1], border=bd_divider)
             continue
 
         # sets border around field header area
-        max_col = sheet[4][-1].column_letter  # avoids calling on merged title
-        field_range = f'A4:{max_col}4'
+        max_col = sheet[4][-1].column_letter  # uses fields instead of title as...
+        field_range = f'A4:{max_col}4'        # ...merged cells don't have this attribute
         set_borders.border_range(sheet, cell_range=field_range, border=bd)
-        set_alignments.align_range(sheet, cell_range=field_range, alignment=align)
 
         # sets dividers between cells
-        for cell in sheet[4]:
+        for cell in sheet[4]:  # Cell in row 4 of given sheet
             if cell is not sheet[4][-1]:
                 set_borders.border_cell(cell, border=bd_divider)
+
+
+def align_field_headers(wb):
+    """
+    Center align field header titles
+    :param wb:
+    :return:
+    """
+
+    align = Alignment(vertical='center', horizontal='center')
+    for sheet in wb:
+        if sheet in [wb['Balance'], wb['Controls']]:
+            if sheet is wb['Controls']:
+                continue
+
+            f_ranges = {'Expenses': 'A4:B4',
+                        'Income': 'C4:D4',
+                        'Balance': 'B8:C8'}
+            for index, value in enumerate(f_ranges.values()):
+                # Center align field labels in Balance sheet
+                set_alignments.align_range(sheet, cell_range=value, alignment=align)
+            continue
+
+        max_col = sheet[4][-1].column_letter  # uses fields instead of title as...
+        field_range = f'A4:{max_col}4'  # ...merged cells don't have this attribute
+        set_alignments.align_range(sheet, cell_range=field_range, alignment=align)
 
 
 def set_balance_fv_placeholders(ws):
