@@ -10,50 +10,16 @@ from workbook_init_scripts import (set_borders,
 
 
 # --------------------- Sheet Headers ---------------------
-def set_sheet_headers(wb, title_fonts):
+def style_titles(wb):
     """
-        Merges cells at top of each sheet to from title area.
+    Creates a NamedStyle object and applies the style
+    to each sheet header.
 
-        :param wb: excel workbook instance
-        :param title_fonts: NamedStyle instance setting style
-        """
+    Adds border to each sheet header
 
-    worksheets = wb.worksheets
-    for index, sheet in enumerate(worksheets):
+    Each sheet header is then given it's own fill pattern.
 
-        # Merges the correct cells on each sheet
-        if sheet not in (wb['Balance'], wb['Controls']):
-            sheet.merge_cells('A1:C3')
-        elif sheet == wb['Balance']:
-            sheet.merge_cells('A1:D3')
-        else:
-            sheet.merge_cells('A1:F3')
-
-        hp = (('Expenses', 'CC6666', 'solid'),
-              ('Income', '66CC66', 'solid'),
-              ('Balance', '6666CC', 'solid'),
-              ('Controls', 'AA00FF', 'solid'))
-
-        # assigns first cell in merged cell to apply a style
-        c = sheet.cell(row=1, column=1, value=hp[index][0])
-        c.style = title_fonts
-        c.fill = PatternFill(fgColor=hp[index][1], fill_type=hp[index][2])
-
-
-def return_title_style(wb):
-    title_fonts = NamedStyle(name='title_font')
-    title_fonts.font = Font(size=20, bold=True, underline='single')
-    title_fonts.alignment = Alignment(horizontal='center', vertical='center')
-    wb.add_named_style(title_fonts)
-    return title_fonts
-
-
-def add_sheet_header_borders(wb):
-    """
-    Apply borders to each sheet header within the workbook
-    application's workbook.
-
-    :param wb: the application's wb
+    :param wb: Workbook containing the sheet
     :return:
     """
 
@@ -64,12 +30,28 @@ def add_sheet_header_borders(wb):
         bottom=pss.side_thick
     )
 
-    for sheet in wb:
-        if sheet not in [wb['Controls'], wb['Balance']]:
+    title_fonts = NamedStyle(name='title_font')
+    title_fonts.font = Font(size=20, bold=True, underline='single')
+    title_fonts.alignment = Alignment(horizontal='center', vertical='center')
+
+    worksheets = wb.worksheets
+    for index, sheet in enumerate(worksheets):
+        hp = (('CC6666', 'solid'),  # Expenses
+              ('66CC66', 'solid'),  # Income
+              ('6666CC', 'solid'),  # Balance
+              ('AA00FF', 'solid'))  # Controls
+
+        # assigns first cell in merged cell to apply a style
+        c = sheet.cell(row=1, column=1)
+        c.style = title_fonts
+        c.fill = PatternFill(fgColor=hp[index][0], fill_type=hp[index][1])
+
+        # Applies border to each header, using bd object
+        if sheet is not wb['Controls']:
             max_col = sheet[4][-1].column_letter  # avoids calling on merged title
             title_range = f'A1:{max_col}3'
         else:
-            title_range = f'A1:C3'
+            title_range = f'A1:F3'
         set_borders.border_range(sheet, cell_range=title_range, border=bd)
 
 

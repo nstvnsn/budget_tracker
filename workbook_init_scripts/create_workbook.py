@@ -12,6 +12,7 @@
 
 from openpyxl import Workbook
 from . import style_workbook as swb
+from . import create_worksheets as cws
 
 
 def new_wb():
@@ -34,9 +35,8 @@ def create():
     wb = new_wb()
 
     # Add and style titles for each sheet
-    title_style = swb.return_title_style(wb)
-    swb.set_sheet_headers(wb, title_style)
-    swb.center_sheet_header(wb)
+    cws.set_sheet_headers(wb)
+    swb.style_titles(wb)
 
     # Set field headers
     swb.set_expense_field_headers(wb)
@@ -45,7 +45,6 @@ def create():
 
     swb.set_balance_fv_placeholders(wb['Balance'])
 
-    swb.add_sheet_header_borders(wb)
     swb.add_field_header_borders(wb)
 
     wb.save('./wb_budget.xlsx')
