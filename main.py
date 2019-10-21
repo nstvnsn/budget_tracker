@@ -7,7 +7,7 @@
         -set_alignments.py
         -set_borders.py
         -set_cell_format.py
-        -style_workbook.py
+        -sheet_style.py
     -main.py
     -wb_budget.xlsx
 
@@ -17,7 +17,7 @@
 
 from openpyxl import load_workbook
 
-from workbook_init_scripts import create_workbook, style_workbook
+from budget_classes.budget_workbook import BudgetWorkbook
 
 F_NAME = './wb_budget.xlsx'
 
@@ -32,7 +32,9 @@ def access_workbook():
     except FileNotFoundError:
         print('No workbook found in program directory', end='\n\n')
         print(f'Creating new workbook "{F_NAME[2:]}"')
-        wb = create_workbook.create()
+        wb = BudgetWorkbook()
+        wb.initialize_budget_workbook()
+
         return wb
 
     return book

@@ -11,8 +11,8 @@
         """
 
 from openpyxl import Workbook
-from . import style_workbook as swb
-from . import create_worksheets as cws
+from . import sheet_style as swb
+from . import sheet_templates as cws
 
 
 def new_wb():
