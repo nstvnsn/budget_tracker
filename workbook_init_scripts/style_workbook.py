@@ -6,7 +6,7 @@ from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
 from workbook_init_scripts import (set_borders,
                                    set_alignments,
                                    set_cell_format,
-                                   pre_set_sides as pss)
+                                   sides as pss)
 
 
 # --------------------- Sheet Headers ---------------------
