@@ -1,3 +1,6 @@
+"""Deprecated:
+    Remaining functionality is to be ported to class methods"""
+
 from openpyxl.styles import Border, Side, PatternFill, Font, Alignment, \
     NamedStyle
 from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
@@ -7,6 +10,7 @@ from workbook_init_scripts import (set_borders,
                                    set_alignments,
                                    set_cell_format,
                                    sides as pss)
+
 
 
 # --------------------- Sheet Headers ---------------------
