@@ -2,7 +2,7 @@ from openpyxl.workbook.workbook import (Workbook,
                                         ReadOnlyWorkbookException,
                                         WriteOnlyWorksheet)
 
-from budget_classes.budget_worksheet import BudgetWorksheet
+from budget_classes.worksheets.budget_worksheet import BudgetWorksheet
 
 
 class BudgetWorkbook(Workbook):
