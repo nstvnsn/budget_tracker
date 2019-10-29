@@ -6,7 +6,7 @@ from openpyxl.styles import Border, Side, PatternFill, Font, Alignment, \
 from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
 
 
-from workbook_init_scripts import (set_borders,
+from workbook_init_scripts import (border_presets,
                                    set_alignments,
                                    set_cell_format,
                                    sides as pss)
@@ -57,7 +57,7 @@ def style_titles(wb):
             title_range = f'A1:{max_col}3'        # ...merged cells don't have this attribute
         else:
             title_range = f'A1:F3'
-        set_borders.border_range(sheet, cell_range=title_range, border=bd)
+        border_presets.border_range(sheet, cell_range=title_range, border=bd)
 
 
 # --------------------- Field Headers ---------------------
@@ -88,25 +88,25 @@ def add_field_header_borders(wb):
             if sheet is wb['Balance']:
                 # Expenses and Income, bd wraps both
                 field_range = 'A4:D4'
-                set_borders.border_range(sheet, cell_range=field_range, border=bd)
+                border_presets.border_range(sheet, cell_range=field_range, border=bd)
 
                 # Balance
                 field_range = 'B8:C8'
-                set_borders.border_range(sheet, cell_range=field_range, border=bd)
+                border_presets.border_range(sheet, cell_range=field_range, border=bd)
 
                 # Set dividing border between field headers
-                set_borders.border_cell(sheet[4][1], border=bd_divider)
+                border_presets.border_cell(sheet[4][1], border=bd_divider)
             continue
 
         # sets border around field header area
         max_col = sheet[4][-1].column_letter  # uses fields instead of title as...
         field_range = f'A4:{max_col}4'        # ...merged cells don't have this attribute
-        set_borders.border_range(sheet, cell_range=field_range, border=bd)
+        border_presets.border_range(sheet, cell_range=field_range, border=bd)
 
         # sets dividers between cells
         for cell in sheet[4]:  # Cell in row 4 of given sheet
             if cell is not sheet[4][-1]:
-                set_borders.border_cell(cell, border=bd_divider)
+                border_presets.border_cell(cell, border=bd_divider)
 
 
 def align_field_headers(wb):
@@ -176,4 +176,4 @@ def set_balance_fv_placeholders(ws):
         set_cell_format.set_to_currency(ws, value.split(':')[0])
 
         # Set Borders
-        set_borders.border_range(ws, value, border=bd[index])
+        border_presets.border_range(ws, value, border=bd[index])

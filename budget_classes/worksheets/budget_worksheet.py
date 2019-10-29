@@ -6,7 +6,7 @@ from openpyxl.styles import Border, Side, PatternFill, Font, Alignment, \
     NamedStyle
 from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
 
-from workbook_init_scripts import (set_borders,
+from workbook_init_scripts import (border_presets,
                                    set_alignments,
                                    set_cell_format,
                                    sides as pss)
@@ -45,6 +45,7 @@ class BudgetWorksheet(Worksheet):
 
         print("To be implemented by one of four subclasses.")
 
+    # --------------------------- Methods for sheet headers ---------------------
     def set_field_headers(self):
         """
         Sets the name and column widths of the field headers

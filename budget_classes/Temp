@@ -41,8 +41,7 @@ def style_titles(self):
     if self.title == 'Expenses':
         print('SELF TITLE:', self.title)
         hp = ('CC6666', 'solid')
-    elif self.title == 'Income':
-        hp = ('66CC66', 'solid')
+
     elif self.title == 'Balance':
         hp = ('6666CC', 'solid')
     elif self.title == 'Controls':
