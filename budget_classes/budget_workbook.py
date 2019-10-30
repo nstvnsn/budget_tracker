@@ -2,6 +2,9 @@ from openpyxl.workbook.workbook import (Workbook,
                                         ReadOnlyWorkbookException,
                                         WriteOnlyWorksheet)
 
+from budget_classes.worksheets.balance_worsheet import BalanceWorksheet
+from budget_classes.worksheets.controls_worksheet import ControlWorksheet
+from budget_classes.worksheets.expense_worksheet import ExpenseWorksheet
 from budget_classes.worksheets.income_worksheet import IncomeWorksheet
 
 
@@ -24,17 +27,22 @@ class BudgetWorkbook(Workbook):
         else:
             if title == 'Income':
                 new_ws = IncomeWorksheet(parent=self, title=title)
-            #elif title == 'Expense'
+            elif title == 'Balance':
+                new_ws = BalanceWorksheet(parent=self, title=title)
+            elif title == 'Expense':
+                new_ws = ExpenseWorksheet(parent=self, title=title)
+            elif title == 'Control':
+                new_ws = ControlWorksheet(parent=self, title=title)
 
         self._add_sheet(sheet=new_ws, index=index)
         return new_ws
 
     def initialize_budget_workbook(self):
         active = self.active
-        #self.create_sheet('Expenses')
+        self.create_sheet('Expense')
         self.create_sheet('Income')
-        #self.create_sheet('Balance')
-       # self.create_sheet('Control')
+        self.create_sheet('Balance')
+        self.create_sheet('Control')
         self.remove_sheet(active)
 
         self.save('./wb_budget.xlsx')

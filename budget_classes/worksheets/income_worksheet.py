@@ -7,13 +7,13 @@ from workbook_init_scripts.border_presets import title_borders
 
 
 class IncomeWorksheet(BudgetWorksheet):
-    """Inherits BudgetWorksheet, a subclass
-        of openpyxl.worksheet.worksheet.Worksheet class.
+    """A modified openpyxl worksheet class
         """
     def __init__(self, parent, title=None):
         BudgetWorksheet.__init__(self, parent, title)
         self.set_title_header()
         self.style_title_header()
+        self.set_field_headers()
 
     # ------------------------- IncomeWorksheet Class Methods -----------------------------
     # --------------------------- Methods for sheet headers ---------------------
@@ -22,7 +22,7 @@ class IncomeWorksheet(BudgetWorksheet):
             Merges cells at top of sheet to from title area.
             Add title to merged cells.
         """
-        self.merge_cells('A1:F3')
+        self.merge_cells('A1:C3')
         self.cell(row=1, column=1, value='Income')
 
     def style_title_header(self):
@@ -40,7 +40,7 @@ class IncomeWorksheet(BudgetWorksheet):
         c = self.cell(row=1, column=1)
         c.style = title_style
 
-        title_borders(self, 'A1:F3')
+        title_borders(self, 'A1:C3')
 
     # --------------------------- Methods for sheet headers ---------------------
     def set_field_headers(self):
@@ -48,10 +48,27 @@ class IncomeWorksheet(BudgetWorksheet):
         Sets the name and column widths of the field headers
         in the sheet.
 
-        To be implemented by one of four subclasses.
+        Center aligning the text.
+
+        Date
+        Source
+        Gain
         """
 
-        print("To be implemented by one of four subclasses.")
+        # Date field - date
+        c = self.cell(row=4, column=1, value='Date')
+        c.alignment = Alignment(horizontal='center')
+        self.column_dimensions[c.column_letter].width = 15
+
+        # Source field - string
+        c = self.cell(row=4, column=2, value='Source')
+        c.alignment = Alignment(horizontal='center')
+        self.column_dimensions[c.column_letter].width = 25
+
+        # Gain field - float
+        c = self.cell(row=4, column=3, value='Gain')
+        c.alignment = Alignment(horizontal='center')
+        self.column_dimensions[c.column_letter].width = 15
 
     def style_field_headers(self):
         """

@@ -14,50 +14,6 @@ from workbook_init_scripts import (border_presets,
 
 
 # --------------------- Sheet Headers ---------------------
-def style_titles(wb):
-    """
-    Creates a NamedStyle object and applies the style
-    to each sheet header.
-
-    Each sheet header is given it's own fill pattern
-
-    Adds border to each sheet header
-
-    :param wb: Workbook containing the sheet
-    :return:
-    """
-
-    title_fonts = NamedStyle(name='title_font')
-    title_fonts.font = Font(size=20, bold=True, underline='single')
-    title_fonts.alignment = Alignment(horizontal='center', vertical='center')
-
-    worksheets = wb.worksheets
-    for index, sheet in enumerate(worksheets):
-        hp = (('CC6666', 'solid'),  # Expenses
-              ('66CC66', 'solid'),  # Income
-              ('6666CC', 'solid'),  # Balance
-              ('AA00FF', 'solid'))  # Controls
-
-        # assigns first cell in merged cell to c to apply a style
-        c = sheet.cell(row=1, column=1)
-        c.style = title_fonts
-        c.fill = PatternFill(fgColor=hp[index][0], fill_type=hp[index][1])
-
-        # bd object for use with setting border style
-        bd = Border(
-            left=pss.side_medium,
-            right=pss.side_medium,
-            top=pss.side_thick,
-            bottom=pss.side_thick
-        )
-
-        # Applies border to each header, using bd object
-        if sheet is not wb['Controls']:
-            max_col = sheet[4][-1].column_letter  # uses fields instead of title as...
-            title_range = f'A1:{max_col}3'        # ...merged cells don't have this attribute
-        else:
-            title_range = f'A1:F3'
-        border_presets.border_range(sheet, cell_range=title_range, border=bd)
 
 
 # --------------------- Field Headers ---------------------
