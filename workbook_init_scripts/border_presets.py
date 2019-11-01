@@ -1,6 +1,18 @@
 from openpyxl.styles import borders, Border, Side, PatternFill, Font, GradientFill, Alignment
 from openpyxl.styles.borders import BORDER_THICK, BORDER_MEDIUM, BORDER_THIN
 
+f_label_border = Border(
+        top=Side(style='medium', color='000000'),
+        bottom=Side(style='medium', color='000000'),
+        left=Side(style='medium', color='000000'),
+        right=Side(style='medium', color='000000'))
+
+title_border = Border(
+        top=Side(style='thick', color='000000'),
+        bottom=Side(style='thick', color='000000'),
+        left=Side(style='thick', color='000000'),
+        right=Side(style='thick', color='000000'))
+
 
 def border_cell(cell, border=Border()):
     cell.border += border
@@ -33,6 +45,19 @@ def border_range(ws, cell_range, border=Border()):
         right_c.border = right_c.border + right
 
 
+def field_label_borders(ws, cell=None, cell_range=None):
+    f_border = Border(
+        top=Side(style='medium', color='000000'),
+        bottom=Side(style='medium', color='000000'),
+        left=Side(style='medium', color='000000'),
+        right=Side(style='medium', color='000000'))
+
+    if cell:
+        border_cell(cell, f_border)
+    if cell_range:
+        border_range(ws, cell_range, f_border)
+
+
 def title_borders(ws, cell_range):
     t_border = Border(
         top=Side(style='thick', color='000000'),
@@ -41,7 +66,6 @@ def title_borders(ws, cell_range):
         right=Side(style='thick', color='000000')
     )
     border_range(ws, cell_range, t_border)
-
 
 def new_record_borders(ws, cell_range, border=Border()):
 

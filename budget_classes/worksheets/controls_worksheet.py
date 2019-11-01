@@ -42,7 +42,7 @@ class ControlWorksheet(BudgetWorksheet):
         title_borders(self, 'A1:F3')
 
     # --------------------------- Methods for sheet headers ---------------------
-    def set_field_headers(self):
+    def set_field_labels(self):
         """
         Sets the name and column widths of the field headers
         in the sheet.
@@ -52,7 +52,7 @@ class ControlWorksheet(BudgetWorksheet):
 
         print("To be implemented by one of four subclasses.")
 
-    def style_field_headers(self):
+    def style_field_labels(self):
         """
         Styles the fields headers in the sheet.
             -font

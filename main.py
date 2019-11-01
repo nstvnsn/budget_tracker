@@ -3,13 +3,9 @@
     budget_tracker_excel directory:
     -workbook_init_scripts/
         -__init__.py
-        -create_workbook.py
-        -set_alignments.py
         -border_presets.py
-        -set_cell_format.py
-        -sheet_style.py
     -main.py
-    -wb_budget.xlsx
+    -wb_budget.xlsx (Created when program executed)
 
     The program first checks if the wb_budget.xlsx workbook exists,
     if not one is created and setup. Otherwise the existing workbook
@@ -37,12 +33,9 @@ def access_workbook():
 
         return wb
 
-    return book
-
 
 def main():
     wb = access_workbook()
-    ws = wb.active
 
 
 if __name__ == '__main__':

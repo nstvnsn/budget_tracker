@@ -13,7 +13,7 @@ class IncomeWorksheet(BudgetWorksheet):
         BudgetWorksheet.__init__(self, parent, title)
         self.set_title_header()
         self.style_title_header()
-        self.set_field_headers()
+        self.set_field_labels()
 
     # ------------------------- IncomeWorksheet Class Methods -----------------------------
     # --------------------------- Methods for sheet headers ---------------------
@@ -43,7 +43,7 @@ class IncomeWorksheet(BudgetWorksheet):
         title_borders(self, 'A1:C3')
 
     # --------------------------- Methods for sheet headers ---------------------
-    def set_field_headers(self):
+    def set_field_labels(self):
         """
         Sets the name and column widths of the field headers
         in the sheet.
@@ -70,7 +70,7 @@ class IncomeWorksheet(BudgetWorksheet):
         c.alignment = Alignment(horizontal='center')
         self.column_dimensions[c.column_letter].width = 15
 
-    def style_field_headers(self):
+    def style_field_labels(self):
         """
         Styles the fields headers in the sheet.
             -font

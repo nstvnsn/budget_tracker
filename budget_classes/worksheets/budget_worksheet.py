@@ -1,15 +1,5 @@
 """BudgetWorksheet class, inheriting from openpyxl.worksheet.worksheet"""
-from openpyxl.cell.cell import Cell
 from openpyxl.worksheet.worksheet import Worksheet
-
-from openpyxl.styles import Border, Side, PatternFill, Font, Alignment, \
-    NamedStyle
-from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
-
-from workbook_init_scripts import (border_presets,
-                                   set_alignments,
-                                   set_cell_format,
-                                   sides as pss)
 
 
 class BudgetWorksheet(Worksheet):
@@ -46,7 +36,7 @@ class BudgetWorksheet(Worksheet):
         print("To be implemented by one of four subclasses.")
 
     # --------------------------- Methods for sheet headers ---------------------
-    def set_field_headers(self):
+    def set_field_labels(self):
         """
         Sets the name and column widths of the field headers
         in the sheet.
@@ -56,7 +46,7 @@ class BudgetWorksheet(Worksheet):
 
         print("To be implemented by one of four subclasses.")
 
-    def style_field_headers(self):
+    def style_field_labels(self):
         """
         Styles the fields headers in the sheet.
             -font
