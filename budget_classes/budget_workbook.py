@@ -2,7 +2,7 @@ from openpyxl.workbook.workbook import (Workbook,
                                         ReadOnlyWorkbookException,
                                         WriteOnlyWorksheet)
 
-from budget_classes.worksheets.balance_worsheet import BalanceWorksheet
+from budget_classes.worksheets.balance_worksheet import BalanceWorksheet
 from budget_classes.worksheets.controls_worksheet import ControlWorksheet
 from budget_classes.worksheets.expense_worksheet import ExpenseWorksheet
 from budget_classes.worksheets.income_worksheet import IncomeWorksheet
@@ -11,9 +11,10 @@ from budget_classes.worksheets.income_worksheet import IncomeWorksheet
 class BudgetWorkbook(Workbook):
 
     def create_sheet(self, title=None, index=None):
-        """Create a worksheet (at an optional index).
+        """Overrides parent method to create custom
+        sheets based on title.
 
-        :param title: optional title of the sheet
+        :param title: title of the sheet
         :type title: str
         :param index: optional position at which the sheet will be inserted
         :type index: int
@@ -34,7 +35,7 @@ class BudgetWorkbook(Workbook):
             elif title == 'Control':
                 new_ws = ControlWorksheet(parent=self, title=title)
 
-        self._add_sheet(sheet=new_ws, index=index)
+        self._add_sheet(sheet=new_ws)
         return new_ws
 
     def initialize_budget_workbook(self):
