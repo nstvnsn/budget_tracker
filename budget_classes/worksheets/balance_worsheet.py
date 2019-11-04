@@ -46,7 +46,7 @@ class BalanceWorksheet(BudgetWorksheet):
     def set_field_labels(self):
         """
         Sets the alignment, border, font, and value properties
-        of the cells that display the field labels.
+        of he cells that display the field labels.
 
         Sets the column width of the columns containing the fields.
 
