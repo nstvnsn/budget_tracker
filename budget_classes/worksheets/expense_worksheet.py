@@ -1,81 +1,57 @@
-"""ExpenseWorksheet class.
-    """
-from openpyxl.styles import Alignment, Color, fills, PatternFill,  Font, NamedStyle
+"""
+ExpenseWorksheet class
+"""
 
 from .budget_worksheet import BudgetWorksheet
-from workbook_init_scripts.border_presets import title_borders
+from workbook_init_scripts.named_styles import label_style, title_style_e
 
 
 class ExpenseWorksheet(BudgetWorksheet):
-    """A modified openpyxl worksheet class
+    """Inherits from openpyxl.worksheet.worksheet.Worksheet
+    Comprised of the following fields:
+        -Date
+        -Purchase
+        -Cost
         """
     def __init__(self, parent, title=None):
         BudgetWorksheet.__init__(self, parent, title)
         self.set_title_header()
-        self.style_title_header()
         self.set_field_labels()
 
     # ------------------------- IncomeWorksheet Class Methods -----------------------------
     # --------------------------- Methods for sheet headers ---------------------
     def set_title_header(self):
         """
-            Merges cells at top of sheet to from title area.
-            Add title to merged cells.
+        Set alignment, font, fill, and border properties
+        for the title cell.
+
+        Merge the first cell with range of cells that will
+        comprise the sheet title header.
         """
+
+        self['A1'].value = 'Expense'
+        self['A1'].style = title_style_e
         self.merge_cells('A1:C3')
-        self.cell(row=1, column=1, value='Expense')
-
-    def style_title_header(self):
-        """
-        Creates a NamedStyle object and applies the style
-        to the sheet title.
-
-        Adds border sheet header.
-        """
-
-        title_style = NamedStyle(name='expense_title')
-        title_style.font = Font(size=20, bold=True, underline='single',)
-        title_style.alignment = Alignment(horizontal='center', vertical='center')
-        title_style.fill = PatternFill(fgColor=Color("CC6666"), fill_type=fills.FILL_SOLID)
-        c = self.cell(row=1, column=1)
-        c.style = title_style
-
-        title_borders(self, 'A1:C3')
 
     # --------------------------- Methods for sheet headers ---------------------
     def set_field_labels(self):
         """
-        Sets the name and column widths of the field headers
-        in the sheet.
+        Sets the alignment, border, font, and value properties
+        of the cells that display the field labels.
 
-        Date
-        Purchase
-        Cost
+        Sets the column width of the columns containing the fields.
         """
 
-        # Date field - date
-        c = self.cell(row=4, column=1, value='Date')
-        c.alignment = Alignment(horizontal='center')
-        self.column_dimensions[c.column_letter].width = 15
+        # Set column widths for the 3 fields on this sheet
+        self.column_dimensions['A'].width = 15
+        self.column_dimensions['B'].width = 25
+        self.column_dimensions['C'].width = 15
 
-        # Purchase field - string
-        c = self.cell(row=4, column=2, value='Purchase')
-        c.alignment = Alignment(horizontal='center')
-        self.column_dimensions[c.column_letter].width = 25
+        self['A4'].value = 'Date'
+        self['A4'].style = label_style
 
-        # Cost field - float
-        c = self.cell(row=4, column=3, value='Cost')
-        c.alignment = Alignment(horizontal='center')
-        self.column_dimensions[c.column_letter].width = 15
+        self['B4'].value = 'Purchase'
+        self['B4'].style = label_style
 
-    def style_field_labels(self):
-        """
-        Styles the fields headers in the sheet.
-            -font
-            -border
-            -alignment
-
-        To be implemented by one of four subclasses.
-        """
-
-        print("To be implemented by one of four subclasses.")
+        self['C4'].value = 'Cost'
+        self['C4'].style = label_style

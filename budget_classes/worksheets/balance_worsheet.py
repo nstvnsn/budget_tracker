@@ -1,14 +1,14 @@
-"""BalanceWorksheet class.
-    """
-from openpyxl.styles import Alignment, Color, fills, PatternFill,  Font, NamedStyle
+"""
+BalanceWorksheet class.
+"""
 
 from .budget_worksheet import BudgetWorksheet
-from workbook_init_scripts.border_presets import title_border, f_label_border
+from workbook_init_scripts.named_styles import label_style, ph_style, title_style_b
 
 
 class BalanceWorksheet(BudgetWorksheet):
     """
-    A modified openpyxl worksheet class.
+    Inherits from openpyxl.worksheet.worksheet.Worksheet
 
     When instantiated, a styled template is created.
     Displays the calculated totals of the income,
@@ -17,6 +17,11 @@ class BalanceWorksheet(BudgetWorksheet):
     These values are to be derived from the worksheets
     'IncomeWorksheet' and 'ExpenseWorksheet' located within
     the same workbook.
+
+    Comprised of the following fields:
+        -Expense
+        -Income
+        -Balance
     """
     def __init__(self, parent, title=None):
         BudgetWorksheet.__init__(self, parent, title)
@@ -24,8 +29,7 @@ class BalanceWorksheet(BudgetWorksheet):
         self.set_field_labels()
         self.set_field_placeholders()
 
-    # ------------------------- IncomeWorksheet Class Methods -----------------------------
-    # --------------------------- Methods for sheet headers ---------------------
+    # ------------------------- BalanceWorksheet Class Methods -----------------------------
     def set_title_header(self):
         """
         Set alignment, font, fill, and border properties
@@ -35,17 +39,10 @@ class BalanceWorksheet(BudgetWorksheet):
         comprise the sheet title header.
         """
 
-        title_style = NamedStyle(name='balance_title')
-        title_style.font = Font(size=20, bold=True, underline='single',)
-        title_style.alignment = Alignment(horizontal='center', vertical='center')
-        title_style.fill = PatternFill(fgColor=Color("6666CC"), fill_type=fills.FILL_SOLID)
-        title_style.border = title_border
-
         self['A1'].value = 'Balance'
-        self['A1'].style = title_style
+        self['A1'].style = title_style_b
         self.merge_cells('A1:D3')
 
-    # --------------------------- Methods for sheet headers ---------------------
     def set_field_labels(self):
         """
         Sets the alignment, border, font, and value properties
@@ -54,10 +51,6 @@ class BalanceWorksheet(BudgetWorksheet):
         Sets the column width of the columns containing the fields.
 
         Merges the cells that comprise each field.
-
-        -Expense
-        -Income
-        -Balance
         """
 
         # Field label ranges
@@ -65,12 +58,6 @@ class BalanceWorksheet(BudgetWorksheet):
             'Expense': 'A4:B4',
             'Income': 'C4:D4',
             'Balance': 'B8:C8'}
-
-        # Label alignment style
-        label_style = NamedStyle(name='balance_fields')
-        label_style.alignment = Alignment(horizontal='center', vertical='center')
-        label_style.border = f_label_border
-        label_style.font = Font(bold=True)
 
         # Set column widths
         for column in ('A', 'B', 'C', 'D'):
@@ -97,12 +84,6 @@ class BalanceWorksheet(BudgetWorksheet):
         ph_ranges = {'Expenses': 'A5:B6',
                      'Income': 'C5:D6',
                      'Balance': 'B9:C10'}
-
-        # Create NamedStyle to apply to the cell
-        ph_style = NamedStyle(name="ph_style")
-        ph_style.alignment = Alignment(horizontal='center', vertical='center')
-        ph_style.border = f_label_border
-        ph_style.number_format = '$#,##0.00'
 
         # Set default placeholder values (0), apply style, merge cells
         for index, value in enumerate(ph_ranges.values()):

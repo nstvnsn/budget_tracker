@@ -1,5 +1,5 @@
-from openpyxl.styles import borders, Border, Side, PatternFill, Font, GradientFill, Alignment
-from openpyxl.styles.borders import BORDER_THICK, BORDER_MEDIUM, BORDER_THIN
+from openpyxl.styles import Border, Side
+from openpyxl.styles.borders import BORDER_MEDIUM, BORDER_THIN
 
 f_label_border = Border(
         top=Side(style='medium', color='000000'),
@@ -66,6 +66,7 @@ def title_borders(ws, cell_range):
         right=Side(style='thick', color='000000')
     )
     border_range(ws, cell_range, t_border)
+
 
 def new_record_borders(ws, cell_range, border=Border()):
 

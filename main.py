@@ -1,4 +1,4 @@
-"""This is the main script for the budget_tracker_excel project.
+"""The main script for the budget_tracker_excel project.
 
     budget_tracker_excel directory:
     -workbook_init_scripts/
