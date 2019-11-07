@@ -1,8 +1,29 @@
 "# budget_tracker_excel" 
 
 Small Python3 project. 
-
 Uses openpyxl to create a workbook of spreadsheets.
+
+budget_tracker_excel directory:
+
+    -budget_classes/
+        -worksheets/
+            __init__.py
+            balance_worksheet.py
+            budget_worksheet.py
+            control_worksheet.py
+            expense_worksheet.py
+            income_worksheet.py
+        __init__.py
+        budget_workbook.py
+    -workbook_init_scripts/
+        -__init__.py
+        -border_presets.py
+        -named_styles.py
+    -main.py
+    -README.md
+    -wb_budget.xlsx (May not exist, 
+        reated when program executed 
+        for the first time)
 
 4 sheets in total:
 

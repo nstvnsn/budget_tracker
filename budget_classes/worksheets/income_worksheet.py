@@ -1,5 +1,6 @@
 """
-IncomeWorksheet class.
+IncomeWorksheet class
+Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
@@ -7,8 +8,7 @@ from workbook_init_scripts.named_styles import label_style, title_style_i
 
 
 class IncomeWorksheet(BudgetWorksheet):
-    """Inherits from openpyxl.worksheet.worksheet.Worksheet
-    Comprised of the following fields:
+    """Comprised of the following fields:
         -Date
         -Source
         -Net

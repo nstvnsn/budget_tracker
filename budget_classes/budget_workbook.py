@@ -1,9 +1,14 @@
+"""
+BudgetWorkbook class
+Inherits from openpyxl.workbook.workbook.Workbook
+"""
+
 from openpyxl.workbook.workbook import (Workbook,
                                         ReadOnlyWorkbookException,
                                         WriteOnlyWorksheet)
 
 from budget_classes.worksheets.balance_worksheet import BalanceWorksheet
-from budget_classes.worksheets.controls_worksheet import ControlWorksheet
+from budget_classes.worksheets.control_worksheet import ControlWorksheet
 from budget_classes.worksheets.expense_worksheet import ExpenseWorksheet
 from budget_classes.worksheets.income_worksheet import IncomeWorksheet
 
@@ -39,6 +44,11 @@ class BudgetWorkbook(Workbook):
         return new_ws
 
     def initialize_budget_workbook(self):
+        """Creates a new workbook with 4 sheets,
+        one for each derived Worksheet class.
+
+        :return:
+        """
         active = self.active
         self.create_sheet('Expense')
         self.create_sheet('Income')

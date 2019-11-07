@@ -1,13 +1,12 @@
 """
 BudgetWorksheet class
+Inherits from openpyxl.worksheet.worksheet.Worksheet
 """
 from openpyxl.worksheet.worksheet import Worksheet
 
 
 class BudgetWorksheet(Worksheet):
-    """Inherits from openpyxl.worksheet.worksheet.Worksheet
-
-        To be further inherited by a more specific worksheet subclass.
+    """To be further inherited by a more specific worksheet subclass.
         Typically one of the following four:
             -ExpensesWorksheet
             -IncomeWorksheet

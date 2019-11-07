@@ -1,15 +1,12 @@
 """The main script for the budget_tracker_excel project.
 
-    budget_tracker_excel directory:
-    -workbook_init_scripts/
-        -__init__.py
-        -border_presets.py
-    -main.py
-    -wb_budget.xlsx (Created when program executed)
-
     The program first checks if the wb_budget.xlsx workbook exists,
     if not one is created and setup. Otherwise the existing workbook
-    will be opened."""
+    will be opened.
+
+    The new or existing workbook is stored in variable "wb" for later
+    use.
+"""
 
 from openpyxl import load_workbook
 

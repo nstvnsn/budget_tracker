@@ -1,5 +1,6 @@
 """
-ControlWorksheet class.
+ControlWorksheet class
+Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet

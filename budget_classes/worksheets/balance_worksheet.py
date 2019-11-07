@@ -1,5 +1,6 @@
 """
-BalanceWorksheet class.
+BalanceWorksheet class
+Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
@@ -7,11 +8,7 @@ from workbook_init_scripts.named_styles import label_style, ph_style, title_styl
 
 
 class BalanceWorksheet(BudgetWorksheet):
-    """
-    Inherits from openpyxl.worksheet.worksheet.Worksheet
-
-    When instantiated, a styled template is created.
-    Displays the calculated totals of the income,
+    """Displays the calculated totals of the income,
     expenses, and the balance between the two.
 
     These values are to be derived from the worksheets
@@ -74,7 +71,7 @@ class BalanceWorksheet(BudgetWorksheet):
             self.merge_cells(value)
 
     def set_field_placeholders(self):
-        """Unique to the balance_worksheet subclass.
+        """Unique to the BalanceWorksheet subclass.
 
         Sets the alignment, border, value and number format
         properties of the cells that display the field
