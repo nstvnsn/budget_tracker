@@ -6,6 +6,7 @@ Inherits from openpyxl.workbook.workbook.Workbook
 from openpyxl.workbook.workbook import (Workbook,
                                         ReadOnlyWorkbookException,
                                         WriteOnlyWorksheet)
+from openpyxl.worksheet.copier import WorksheetCopy
 
 from budget_classes.worksheets.balance_worksheet import BalanceWorksheet
 from budget_classes.worksheets.control_worksheet import ControlWorksheet
@@ -25,20 +26,15 @@ class BudgetWorkbook(Workbook):
         :type index: int
 
         """
-        if self.read_only:
-            raise ReadOnlyWorkbookException('Cannot create new sheet in a read-only workbook')
 
-        if self.write_only:
-            new_ws = WriteOnlyWorksheet(parent=self, title=title)
-        else:
-            if title == 'Income':
-                new_ws = IncomeWorksheet(parent=self, title=title)
-            elif title == 'Balance':
-                new_ws = BalanceWorksheet(parent=self, title=title)
-            elif title == 'Expense':
-                new_ws = ExpenseWorksheet(parent=self, title=title)
-            elif title == 'Control':
-                new_ws = ControlWorksheet(parent=self, title=title)
+        if title == 'Income':
+            new_ws = IncomeWorksheet(parent=self, title=title)
+        elif title == 'Balance':
+            new_ws = BalanceWorksheet(parent=self, title=title)
+        elif title == 'Expense':
+            new_ws = ExpenseWorksheet(parent=self, title=title)
+        elif title == 'Control':
+            new_ws = ControlWorksheet(parent=self, title=title)
 
         self._add_sheet(sheet=new_ws)
         return new_ws

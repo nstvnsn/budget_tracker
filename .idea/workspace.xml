@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22cce667-e407-4846-9a01-840da3e83acb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nstev.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_classes/Temp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/budget_classes/records/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budget_classes/records/expense_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budget_classes/budget_workbook.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/budget_workbook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_classes/worksheets/balance_worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/worksheets/balance_worksheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budget_classes/worksheets/budget_worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/worksheets/budget_worksheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_classes/worksheets/controls_worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/worksheets/control_worksheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_classes/worksheets/income_worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/worksheets/income_worksheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workbook_init_scripts/create_workbook.py.orig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workbook_init_scripts/sheet_style.py.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +19,62 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/budget_classes/records/expense_record.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1032">
+              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/workbook_init_scripts/named_styles.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+              <folding>
+                <element signature="e#300#334#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/budget_classes/budget_workbook.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="e#63#108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,18 +104,19 @@
         <option value="$PROJECT_DIR$/q" />
         <option value="$PROJECT_DIR$/workbook_init_scripts/sheet_style.py" />
         <option value="$PROJECT_DIR$/workbook_init_scripts/create_workbook.py" />
-        <option value="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" />
         <option value="$PROJECT_DIR$/workbook_init_scripts/border_presets.py" />
         <option value="$PROJECT_DIR$/budget_classes/worksheets/balance_worsheet.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/budget_classes/budget_workbook.py" />
         <option value="$PROJECT_DIR$/budget_classes/worksheets/controls_worksheet.py" />
         <option value="$PROJECT_DIR$/budget_classes/worksheets/income_worksheet.py" />
-        <option value="$PROJECT_DIR$/budget_classes/worksheets/budget_worksheet.py" />
         <option value="$PROJECT_DIR$/budget_classes/worksheets/balance_worksheet.py" />
-        <option value="$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py" />
         <option value="$PROJECT_DIR$/.idea/.gitignore" />
+        <option value="$PROJECT_DIR$/budget_classes/worksheets/budget_worksheet.py" />
+        <option value="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" />
+        <option value="$PROJECT_DIR$/budget_classes/budget_workbook.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/budget_classes/records/expense_record.py" />
+        <option value="$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py" />
       </list>
     </option>
   </component>
@@ -91,24 +142,24 @@
             <path>
               <item name="budget_tracker_excel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\nstev\Documents\pyDev\GitProjects\budget_tracker_excel" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="budget_tracker_excel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\nstev\Documents\pyDev\GitProjects\budget_tracker_excel" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="inspectionProfiles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="budget_classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="budget_tracker_excel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\nstev\Documents\pyDev\GitProjects\budget_tracker_excel" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="budget_classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="records" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="budget_tracker_excel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\nstev\Documents\pyDev\GitProjects\budget_tracker_excel" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="budget_classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="worksheets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="budget_tracker_excel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\nstev\Documents\pyDev\GitProjects\budget_tracker_excel" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="workbook_init_scripts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -233,8 +284,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.balance_worsheet" />
         <item itemvalue="Python.budget_workbook" />
+        <item itemvalue="Python.balance_worsheet" />
         <item itemvalue="Python.expense_worksheet" />
       </list>
     </recent_temporary>
@@ -264,27 +315,31 @@
       <workItem from="1572830835649" duration="427000" />
       <workItem from="1573151361004" duration="1477000" />
       <workItem from="1573152881863" duration="222000" />
+      <workItem from="1573153274796" duration="167000" />
+      <workItem from="1574041428697" duration="1020000" />
+      <workItem from="1574042978521" duration="7154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58867000" />
+    <option name="totallyTimeSpent" value="67208000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1381" height="885" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2631579" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2791762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3264463" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3292011" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3292011" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39944905" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.0523416" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.2912088" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3292011" />
@@ -298,7 +353,7 @@
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25781846" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2791762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -309,7 +364,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.0523416" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.2912088" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3292011" />
@@ -326,15 +381,55 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/budget_tracker_excel$budget_workbook.coverage" NAME="budget_workbook Coverage Results" MODIFIED="1572390422039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/budget_classes" />
+    <SUITE FILE_PATH="coverage/budget_tracker_excel$budget_workbook.coverage" NAME="budget_workbook Coverage Results" MODIFIED="1574102041185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/budget_classes" />
     <SUITE FILE_PATH="coverage/budget_tracker_excel$expense_worksheet.coverage" NAME="expense_worksheet Coverage Results" MODIFIED="1572390191664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/budget_classes/worksheets" />
-    <SUITE FILE_PATH="coverage/budget_tracker_excel$main.coverage" NAME="main Coverage Results" MODIFIED="1573152816451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/budget_tracker_excel$main.coverage" NAME="main Coverage Results" MODIFIED="1574103964853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/budget_tracker_excel$balance_worsheet.coverage" NAME="balance_worsheet Coverage Results" MODIFIED="1572626839848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/budget_classes/worksheets" />
     <SUITE FILE_PATH="coverage/Finance_Manager$main.coverage" NAME="main Coverage Results" MODIFIED="1570917488566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -381,16 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workbook_init_scripts/named_styles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workbook_init_scripts/border_presets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -415,17 +500,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/budget_classes/budget_workbook.py">
+    <entry file="file://$PROJECT_DIR$/.idea/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/budget_worksheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="240">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/balance_worksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -436,38 +528,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/control_worksheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
+        <state relative-caret-position="-458">
           <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/balance_worksheet.py">
+    <entry file="file://$PROJECT_DIR$/workbook_init_scripts/named_styles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1587">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="216">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/budget_classes/budget_workbook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="160">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <folding>
+            <element signature="e#300#334#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.gitignore">
+    <entry file="file://$PROJECT_DIR$/budget_classes/records/expense_record.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+        <state relative-caret-position="1032">
+          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/budget_classes/worksheets/expense_worksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#63#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

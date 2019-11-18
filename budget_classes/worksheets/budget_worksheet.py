@@ -13,12 +13,10 @@ class BudgetWorksheet(Worksheet):
             -BalanceWorksheet
             -ControlsWorksheet
     """
-
-    # ----------------------- Overridden Parent Class Methods -----------------------------
     def __init__(self, parent, title=None):
         Worksheet.__init__(self, parent, title)
 
-# ------------------------- BudgetWorksheet Class Methods -----------------------------
+    # ------------------------- BudgetWorksheet Class Methods -----------------------------
     def set_title_header(self):
         """
             Merges cells at top of sheet to from title area.

@@ -4,13 +4,14 @@ Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
+from ..records.expense_record import ExpenseRecord
 from workbook_init_scripts.named_styles import label_style, title_style_e
 
 
 class ExpenseWorksheet(BudgetWorksheet):
     """Comprised of the following fields:
         -Date
-        -Purchase
+        -Expense
         -Cost
         """
     def __init__(self, parent, title=None):
@@ -18,8 +19,8 @@ class ExpenseWorksheet(BudgetWorksheet):
         self.set_title_header()
         self.set_field_labels()
 
-    # ------------------------- IncomeWorksheet Class Methods -----------------------------
-    # --------------------------- Methods for sheet headers ---------------------
+    # ------------------- IncomeWorksheet Class Methods -----------------------
+    # ----------------------- Sheet builder methods ---------------------------
     def set_title_header(self):
         """
         Set alignment, font, fill, and border properties
@@ -33,7 +34,6 @@ class ExpenseWorksheet(BudgetWorksheet):
         self['A1'].style = title_style_e
         self.merge_cells('A1:C3')
 
-    # --------------------------- Methods for sheet headers ---------------------
     def set_field_labels(self):
         """
         Sets the alignment, border, font, and value properties
@@ -50,8 +50,11 @@ class ExpenseWorksheet(BudgetWorksheet):
         self['A4'].value = 'Date'
         self['A4'].style = label_style
 
-        self['B4'].value = 'Purchase'
+        self['B4'].value = 'Expense'
         self['B4'].style = label_style
 
         self['C4'].value = 'Cost'
         self['C4'].style = label_style
+
+
+
