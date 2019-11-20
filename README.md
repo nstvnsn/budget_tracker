@@ -6,6 +6,9 @@ Uses openpyxl to create a workbook of spreadsheets.
 budget_tracker_excel directory:
 
     -budget_classes/
+        -records/
+            __init__.py
+            expense_record.py
         -worksheets/
             __init__.py
             balance_worksheet.py
@@ -28,7 +31,7 @@ budget_tracker_excel directory:
 4 sheets in total:
 
     -Income
-    -Expenses
+    -Expense
     -Balance
     -Controls
     
@@ -45,7 +48,7 @@ header.
 Expense:
 
     -Date
-    -Purchase
+    -Expense
     -Cost
 
 Income:
@@ -62,6 +65,10 @@ Balance:
 
 Functionality to be added:
 
+    -Add/Remove/Update expense records
+    -Add/Remove/Update income records
+    -set balance fields to calculated values
+    -allow switching between balances for each month
     -Balance forecasting based on income and expenses over last 30 days
     -Form for adding new income and expense records (thinkink Tkinter or 
      other Python GUI framework)

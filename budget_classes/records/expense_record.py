@@ -5,7 +5,7 @@ For adding expense records to the expense worksheet.
 
 
 class ExpenseRecord:
-    def __init__(self, date, expense, cost):
+    def __init__(self, date=None, expense=None, cost=None):
         self._date = date
         self._expense = expense
         self._cost = cost
@@ -44,4 +44,38 @@ class ExpenseRecord:
     them as an original Worksheet class object.
     """
 
+    def add_new_record(self, expense_ws):
+        if expense_ws['A5'] is not None:
+            expense_ws.insert_rows(idx=5)
 
+        expense_ws['A5'].value = self.date()
+        expense_ws['B5'].value = self.expense()
+        expense_ws['C5'].value = self.cost()
+        expense_ws['C5'].number_format = '$#,##0.00'
+
+    def remove_record(self, expense_ws, row_num):
+        """
+        Removes record located in the worksheet at a given row.
+        Returns record object.
+
+        :param expense_ws:
+        :param row_num:
+        :return:
+        """
+        if expense_ws['A'+str(row_num)] is None:
+            """
+            No record at given row, print message stating so.
+            """
+            print("No record exists")
+            return
+
+        _date = expense_ws['A'+row_num]
+        _expense = expense_ws['B'+row_num]
+        _cost = expense_ws['c'+row_num]
+
+        self.set_date(_date)
+        self.set_expense(_expense)
+        self.set_cost(_cost)
+
+        expense_ws.delete_rows(row_num, 1)
+        return self
