@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22cce667-e407-4846-9a01-840da3e83acb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/main_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_classes/records/expense_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_classes/records/expense_record.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wb_budget.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/wb_budget.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/workbook_init_scripts/named_styles.py" afterDir="false" />
-    </list>
+    <list default="true" id="22cce667-e407-4846-9a01-840da3e83acb" name="Default Changelist" comment="" />
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/budget_classes/records/expense_record.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="22">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -320,12 +312,12 @@
       <workItem from="1573153274796" duration="167000" />
       <workItem from="1574041428697" duration="1020000" />
       <workItem from="1574042978521" duration="12868000" />
-      <workItem from="1574269135348" duration="1345000" />
+      <workItem from="1574269135348" duration="1978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74267000" />
+    <option name="totallyTimeSpent" value="74900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="33" width="1381" height="885" extended-state="6" />
@@ -336,7 +328,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3264463" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38705233" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38705233" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39944905" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -579,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/budget_classes/records/expense_record.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        <state relative-caret-position="22">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
