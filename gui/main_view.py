@@ -27,7 +27,7 @@ frm_balance = tk.Frame(frm_top, bd=2, bg='#4287f5', relief='groove')
 # --------------------- BUTTON FUNCTIONS ---------------------
 
 def show_active_frame(btn_callback):
-    def wrapper():
+    def wrapper(frm_top, from_view_buttons):
         if btn_callback.__name__ == 'show_income_frame':
             print('test')
             clicked = frm_view_buttons.children.get('btn_income')
@@ -52,11 +52,12 @@ def show_active_frame(btn_callback):
 
 
 @show_active_frame
-def show_income_frame():
+def show_income_frame(top_frame, view_buttons_frame):
     """
     Clicking 'Income' button displays Expense frame, hiding the other top frames,
     and reflects changes in the buttons. If Expense frame already active, do nothing.
     """
+    print(top_frame.children())
     frm_balance.place_forget()
     frm_expense.place_forget()
     frm_income.place(relheight=0.9, relwidth=1)
@@ -91,7 +92,7 @@ frm_view_buttons = tk.Frame(frm_top, bd=1, bg='white')
 frm_view_buttons.place(relheight=0.1, relwidth=0.4, relx=0, rely=0.9)
 
 btn_income_view = tk.Button(frm_view_buttons, name='btn_income', text='Income', bd=1, relief='ridge',
-                            command=show_income_frame)
+                            command=lambda: show_income_frame(frm_top, frm_view_buttons))
 btn_income_view.place(height=25, width=60, rely=0)
 btn_income_view.configure(relief='sunken')
 
