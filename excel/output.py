@@ -11,6 +11,7 @@ Returns wb object, program can then populate with records from database
 """
 
 from openpyxl import load_workbook
+
 from excel.workbook.workbook import BudgetWorkbook
 
 F_NAME = './wb_budget.xlsx'

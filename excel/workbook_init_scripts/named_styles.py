@@ -1,6 +1,6 @@
 from openpyxl.styles import NamedStyle, Alignment, Font, PatternFill, Color, fills
 
-from excel.workbook_init_scripts import f_label_border, title_border
+from excel.workbook_init_scripts.border_presets import f_label_border, title_border
 
 
 

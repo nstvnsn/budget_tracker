@@ -1,15 +1,13 @@
-from screeninfo import get_monitors, Monitor
+"""
+Budget Tracker with Kivy GUI
+Unsure of how much behavior and logic will end up in here.
+Thus far, all of the UI is implemented in budgettracker.kv
+"""
 
 import kivy
 from kivy.app import App
-from kivy.core.window import WindowBase, Window
-from kivy.graphics import Color, Rectangle
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.recyclegridlayout import RecycleGridLayout
 from kivy.uix.recycleview import RecycleView
-from kivy.uix.label import Label
-from kivy.uix.widget import Widget
-
 
 kivy.require("1.11.1")
 
@@ -21,8 +19,8 @@ class RecordsRecycleView(RecycleView):
 
 
 class MainWindowGrid(GridLayout):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    """Implementation managed by budgettracker.kv"""
+    pass
 
 
 class BudgetTracker(App):

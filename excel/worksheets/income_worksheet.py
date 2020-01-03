@@ -4,7 +4,7 @@ Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
-from excel.workbook_init_scripts import label_style, title_style_i
+from excel.workbook_init_scripts.named_styles import label_style, title_style_i
 
 
 class IncomeWorksheet(BudgetWorksheet):

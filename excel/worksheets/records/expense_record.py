@@ -1,10 +1,11 @@
 """
+NOT IN USE AT THE MOMENT
 ExpenseRecord class
 For adding expense records to the expense worksheet.
 """
 
 
-class WorksheetExpenseRecord:
+class ExpenseRecord:
     def __init__(self, date=None, expense=None, cost=None):
         self._date = date
         self._expense = expense

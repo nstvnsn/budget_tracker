@@ -1,24 +1,15 @@
 """The main script for the budget_tracker project.
 
-
-
-    The new or existing workbook is stored in variable "wb" for later
-    use.
+    Entry point for the App.
 """
-from kivy import Config  # Move this block to main.py eventually
-# Config.set('graphics', 'width', '2000')
-# Config.set('graphics', 'height', '1200')
-# Config.set('graphics', 'minimum_width', '800')
-# Config.set('graphics', 'minimum_height', '900')
-# Config.set('graphics', 'position', 'auto')
 
-import gui.kconfig
+from gui.kconfig import set_kivy_config
 
 from gui.main_view_kivy import BudgetTracker
 
 
 def main():
-
+    set_kivy_config()
     BudgetTracker().run()
 
 
