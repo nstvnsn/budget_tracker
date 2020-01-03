@@ -1,29 +1,41 @@
-"# budget_tracker" 
+### budget_tracker
 
-Small Python3 project. 
+Small Python project.
 
-Using tkinter, postgreSQL, and my desire to subconsciously push myself towards
+Using Kivy, sqlite3, and my desire to subconsciously push myself towards
 better financial management I am developing a budget tracking app.
 
+My initial intention to use tkinter was a bust. tkinter is a great library for
+much simpler implementations than what I had in mind. Kivy seems to be a great fit.
+It's cross-platform compatibility sounds like a solid segue into an Android app
+at a later date.
+
+I also realize now that an embedded DB is what I need and will revisit PostgreSQL
+when I make a web app version of this project.
+
 This application will allow me to grow in areas such as GUI development, DB management
-and SQL scripting (with attention paid to secure practices with input sanitation and the
- like). 
+and SQL scripting (with attention paid to secure and best practices.
  
- Ideas:
-    
+ Features to be implemented:
+
     -graphical representation of income and spending trajectories
+     (Likely to be included in the openpyxl portion of the project)
+
+    -multi-view using Kivy's screenmanager to switch between record
+     types (Income/Expense)
+
+    -add/remove/update records
+
+    -date range to view records that fall between dates x and y
+
     -multi-user support with authentication
-    -port to a web-app or mobile app in the not too distant future
-    
-
-
+    (reserved for web app implementation)
 
 ---
-###_The following is now but a small feature in the program_
-##### The excel workbooks will just serve as a means for 
-##### exporting a nice formatted .xlsx file
 
----
+### The following is now but a small feature in the program
+
+
 
 Uses openpyxl to create a workbook of spreadsheets.
 
@@ -35,8 +47,8 @@ Uses openpyxl to create a workbook of spreadsheets.
     -Expense
     -Balance
     -Controls
-    
-    
+
+
 Creates a new workbook with 4 new worksheets in root directory, unless workbook
 already in existence.
 
@@ -57,7 +69,7 @@ Income:
     -Date
     -Source
     -Net
-    
+
 Balance:
 
     -Expense
@@ -66,7 +78,4 @@ Balance:
 
 Functionality to be added:
 
-    -Add/Remove/Update expense records
-    -Add/Remove/Update income records
-    -set balance fields to calculated values from expense and income sheets
-    -Balance forecasting based on income and expenses over last 30 days
+    -implement tables and graphs to visually represent income and spending
