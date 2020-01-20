@@ -5,10 +5,10 @@ Inherits from openpyxl.workbook.workbook.Workbook
 
 from openpyxl.workbook.workbook import Workbook
 
-from excel.worksheets.balance_worksheet import BalanceWorksheet
-from excel.worksheets.control_worksheet import ControlWorksheet
-from excel.worksheets.expense_worksheet import ExpenseWorksheet
-from excel.worksheets.income_worksheet import IncomeWorksheet
+from worksheets.balance_worksheet import BalanceWorksheet
+from worksheets.control_worksheet import ControlWorksheet
+from worksheets.expense_worksheet import ExpenseWorksheet
+from worksheets.income_worksheet import IncomeWorksheet
 
 
 class BudgetWorkbook(Workbook):
@@ -49,4 +49,4 @@ class BudgetWorkbook(Workbook):
         self.create_sheet('Control')
         self.remove_sheet(active)
 
-        self.save('./wb_budget.xlsx')
+        self.save('./excel/wb_budget.xlsx')

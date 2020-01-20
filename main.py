@@ -1,17 +1,11 @@
-"""The main script for the budget_tracker project.
+import sys
 
-    Entry point for the App.
-"""
+from PyQt5.QtWidgets import QApplication
 
-from gui.kconfig import set_kivy_config
-
-from gui.main_view_kivy import BudgetTracker
+from gui.view import Main
 
 
-def main():
-    set_kivy_config()
-    BudgetTracker().run()
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app = QApplication([])
+    budget_tracker = Main()
+    sys.exit(app.exec_())

@@ -4,7 +4,8 @@ Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
-from excel.workbook_init_scripts.named_styles import label_style, ph_style, title_style_b
+from workbook_init_scripts.named_styles import (label_style, ph_style,
+                                                title_style_b)
 
 
 class BalanceWorksheet(BudgetWorksheet):

@@ -1,4 +1,7 @@
 .idea
+.vscode
+records.db
 venv
+wb_budget.xlsx
 __pycache__
 

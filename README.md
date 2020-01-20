@@ -2,34 +2,25 @@
 
 Small Python project.
 
-Using Kivy, sqlite3, and my desire to subconsciously push myself towards
+Using PyQt5, sqlite3, and my desire to subconsciously push myself towards
 better financial management I am developing a budget tracking app.
 
-My initial intention to use tkinter was a bust. tkinter is a great library for
-much simpler implementations than what I had in mind. Kivy seems to be a great fit.
-It's cross-platform compatibility sounds like a solid segue into an Android app
-at a later date.
+My aim with this application is to grow in areas such as GUI development, DB management
+and SQL scripting.
 
-I also realize now that an embedded DB is what I need and will revisit PostgreSQL
-when I make a web app version of this project.
-
-This application will allow me to grow in areas such as GUI development, DB management
-and SQL scripting (with attention paid to secure and best practices.
- 
  Features to be implemented:
 
     -graphical representation of income and spending trajectories
      (Likely to be included in the openpyxl portion of the project)
 
-    -multi-view using Kivy's screenmanager to switch between record
-     types (Income/Expense)
+    -two views for records. An income view and an expense view
 
     -add/remove/update records
 
     -date range to view records that fall between dates x and y
 
     -multi-user support with authentication
-    (reserved for web app implementation)
+    (reserved for web app implementation perhaps)
 
 ---
 

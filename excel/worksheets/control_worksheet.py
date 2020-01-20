@@ -4,7 +4,7 @@ Inherits BudgetWorksheet class
 """
 
 from .budget_worksheet import BudgetWorksheet
-from excel.workbook_init_scripts.named_styles import title_style_c
+from workbook_init_scripts.named_styles import title_style_c
 
 
 class ControlWorksheet(BudgetWorksheet):

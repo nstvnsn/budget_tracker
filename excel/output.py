@@ -12,21 +12,21 @@ Returns wb object, program can then populate with records from database
 
 from openpyxl import load_workbook
 
-from excel.workbook.workbook import BudgetWorkbook
+from workbook.workbook import BudgetWorkbook
 
-F_NAME = './wb_budget.xlsx'
+F_NAME = './excel/wb_budget.xlsx'
 
 
 def access_workbook():
 
     try:
         wb = load_workbook(F_NAME)
-        print(f'Workbook "{F_NAME[2:]}" loaded')
+        print(f'Workbook "{F_NAME[8:]}" loaded')
         return wb
 
     except FileNotFoundError:
         print('No workbook found in program directory', end='\n\n')
-        print(f'Creating new workbook "{F_NAME[2:]}"')
+        print(f'Creating new workbook "{F_NAME[8:]}"')
         wb = BudgetWorkbook()
         wb.initialize_budget_workbook()
 
