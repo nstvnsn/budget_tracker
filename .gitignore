@@ -1,7 +1,8 @@
+__pycache__
 .idea
 .vscode
+excel/wb_budget.xlsx
 records.db
 venv
-wb_budget.xlsx
-__pycache__
+
 
