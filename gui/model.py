@@ -4,20 +4,20 @@ from PyQt5.QtSql import QSqlRelationalTableModel
 class IncomeRecordsModel(QSqlRelationalTableModel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.initRecordsModel()
+        self.init_records_model()
 
-    def initRecordsModel(self):
+    def init_records_model(self):
         self.setTable("Income")
         self.select()
-        self.setEditStrategy(QSqlRelationalTableModel.OnFieldChange)
+        self.setEditStrategy(QSqlRelationalTableModel.OnFieldChange)  # Change to OnManualSubmit once buttons are added
 
 
 class ExpenseRecordsModel(QSqlRelationalTableModel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.initRecordsModel()
+        self.init_records_model()
 
-    def initRecordsModel(self):
+    def init_records_model(self):
         self.setTable("Expense")
         self.select()
-        self.setEditStrategy(QSqlRelationalTableModel.OnFieldChange)
+        self.setEditStrategy(QSqlRelationalTableModel.OnFieldChange)  # Change to OnManualSubmit once buttons are added
