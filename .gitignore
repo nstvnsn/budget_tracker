@@ -3,6 +3,6 @@ __pycache__
 .vscode
 excel/wb_budget.xlsx
 records.db
-venv
+btenv
 
 

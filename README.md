@@ -1,11 +1,17 @@
 ### budget_tracker
 
-To try out (Not functional, Work in Progress):
+To try out main app GUI(Not functional, work in Progress):
 
 1. Clone repo
 2. cd to repo directory
 3. Run `pip install -r requirements.txt` (Pip required)
 4. Run `python3 main.py`
+
+
+To generate a spreadsheet '.xlsx' file:
+
+1. cd to repo directory (if not already there)
+2. Run `python3 excel/output.py`
 
 Small Python project.
 
