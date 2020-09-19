@@ -11,5 +11,5 @@ PyQt5==5.13.2
 PyQt5-sip==12.7.0
 PyQt5-stubs==5.13.1.4
 rarfile==2.7
-requests==2.6.0
+requests==2.20.0
 sip==4.19.8
