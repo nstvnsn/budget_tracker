@@ -1,5 +1,12 @@
 ### budget_tracker
 
+To try out (Not functional, Work in Progress):
+
+1. Clone repo
+2. cd to repo directory
+3. Run `pip install -r requirements.txt` (Pip required)
+4. Run `python3 main.py`
+
 Small Python project.
 
 Using PyQt5, sqlite3, and my desire to subconsciously push myself towards
@@ -8,7 +15,7 @@ better financial management I am developing a budget tracking app.
 My aim with this application is to grow in areas such as GUI development, DB management
 and SQL scripting.
 
- Features to be implemented:
+Features to be implemented:
 
     -graphical representation of income and spending trajectories
      (Likely to be included in the openpyxl portion of the project)
@@ -26,11 +33,7 @@ and SQL scripting.
 
 ### The following is now but a small feature in the program
 
-
-
 Uses openpyxl to create a workbook of spreadsheets.
-
-
 
 4 sheets in total:
 
@@ -38,7 +41,6 @@ Uses openpyxl to create a workbook of spreadsheets.
     -Expense
     -Balance
     -Controls
-
 
 Creates a new workbook with 4 new worksheets in root directory, unless workbook
 already in existence.
